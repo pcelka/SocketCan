@@ -40,7 +40,7 @@ main(void)
                 return -2;
         }
 	
-	    frame.can_id  = 0x0F6;
+	frame.can_id  = 0x0F6;
         frame.can_dlc = 8;
         frame.data[0] = 0x10;
         frame.data[1] = 0x78;
@@ -52,7 +52,7 @@ main(void)
         frame.data[7] = 0x00;
         
         nbytes = write(s, &frame, sizeof(struct can_frame));
-	    printf("Wrote %d bytes\n", nbytes);
+	printf("Wrote %d bytes\n", nbytes);
         
         frame.can_id  = 0x0B6;
         frame.can_dlc = 8;
@@ -64,9 +64,6 @@ main(void)
         frame.data[5] = 0x00;
         frame.data[6] = 0x00;
         frame.data[7] = 0x00;
- 
-        nbytes = write(s, &frame, sizeof(struct can_frame));
-	printf("Wrote %d bytes\n", nbytes);
  
         nbytes = write(s, &frame, sizeof(struct can_frame));
 	printf("Wrote %d bytes\n", nbytes);
